@@ -3,8 +3,8 @@
 #include <time.h>
 
 /**
- * main - Entry of random numbers
- * Return: 0 (Success)
+ * main - Entry
+ * Return: 0
 */
 int main(void)
 {
@@ -17,14 +17,24 @@ int main(void)
 
 	if (a > 5)
 	{
+
 		printf("Last digit of %d is %d and is greater than 5\n", n, a);
 	}
 	else if (a == 0)
 	{
-		printf("Last digit  of %d is %d and is 0\n", n, a);
+
+		printf("Last digit of %d is %d and is 0\n", n, a);
 	}
+
+
+
+
 	else
+		(a < 6 && a != 0)
+
+
 	{
+
 		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, a);
 	}
 	return (0);
