@@ -9,9 +9,9 @@
 */
 int main(void)
 {
-	char letter;
-		
-	for (letter = 'a'; letter <= 'z'; letter++);
+	char c;
 
-	return (letter);
-}
+	for (c = 'a'; c <= 'z'; c++);
+
+	return (c);
+}	
