@@ -9,22 +9,28 @@
 
 int main(void)
 {
-	int count;
-	unsigned long fib1 = 0, fib2 = 1, sum;
+	int count = 2;
 
-	for (count = 0; count < 50; count++)
+	lont int i = 1, j = 2;
+	long int k;
+
+	printf("%lu, ", i);
+	while (count <= 50)
+
 	{
-		sum = fib1 + fib2;
-		printf("%lu", sum);
-
-		fib1 = fib2;
-		fib2 = sum;
-
-		if (count == 49)
-			printf("\n");
-
+		if (count == 50)
+		{
+			printf("%lu\n", j);
+		}
 		else
-			printf(",");
+		{
+			printf("%lu, ", j);
+		}
+
+		k = j;
+		j += i;
+		i = k;
+		count++;
 	}
 	return (0);
 }
