@@ -3,8 +3,8 @@
 /**
  * _pow_recursion - Returns the value of x raised to the power of y
  * @x: the value to multiply
- * @y: the times to multiply the value
- * Returns; the value mutiplied y times
+ * @y: the times to mutiply the value
+ * Return: the value multiplied y times
 */
 
 int _pow_recursion(int x, int y)
@@ -13,5 +13,5 @@ int _pow_recursion(int x, int y)
 		return (-1);
 	if (y == 0)
 		return (1);
-	return (x * _pow_recursion(x,y - 1));
+	return (x * _pow_recursion(x, y - 1));
 }
