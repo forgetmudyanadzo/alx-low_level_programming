@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - insert a node at index
+ * insert_nodeint_at_index - insert a node at index in linked list
  * @head: double pointer of the list
  * @index: location to insert node
  * @n: value to the inserted node
@@ -11,38 +11,31 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *value, *pos;
-	unsigned int i = 1;
+	unsigned int i;
+	listint_t *value;
+	listint_t *temp = *head;
 
-	value = *head;
-
-	if (head == NULL)
+	value = malloc(sizeof(listint_t));
+	if (!value || !head)
 		return (NULL);
-	if (*head == NULL)
+	value->n = n;
+	value->next = NULL;
+	if (idx == 0)
 	{
-		pos = (listint_t *) malloc(sizeof(listint_t));
-		if (pos == NULL)
-			return (NULL);
-		*head = pos;
-		pos->next = NULL;
-		pos->n = n;
-		return (pos);
+		value->next = *head;
+		*head = value;
+		return (value);
 	}
-
-	while (value->next != NULL && i < idx - 1)
-		value = value->next;
-	i++;
-	idx++;
-	if (i != idx - 1)
+	for (i = 0; temp && i < idx; i++)
 	{
-		return (NULL);
+		if (i == idx - 1)
+		{
+			value->next = temp->next;
+			temp->next = value;
+			return (value);
+		}
+		else
+			temp = temp->next;
 	}
-
-	pos = (listint_t *) malloc(sizeof(listint_t));
-	if (pos == NULL)
-	pos->n = n;
-	pos->next = value->next;
-	value->next = pos;
-
-	return (pos);
+	return (NULL);
 }
