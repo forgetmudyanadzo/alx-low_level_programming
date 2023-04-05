@@ -4,7 +4,7 @@
 /**
  * add_node_end - add new node at the end of the list
  * @head: current in the list
- * @n: int to add to the list
+ * @n: int to add to list
  * Return: pointer to the current position in list
 */
 
@@ -19,10 +19,12 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		return (NULL);
 	}
 	new->n = n;
+	new->next = NULL;
 
 	if (*head == NULL)
 	{
 		*head = new;
+		return (*head);
 	}
 	else
 	{
